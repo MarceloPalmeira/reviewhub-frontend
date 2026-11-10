@@ -1,0 +1,50 @@
+[tools]
+node = "24.22.2"
+
+[tasks.setup]
+description = "Instala as dependências usando o lockfile npm"
+run = "npm ci"
+
+[tasks.dev]
+description = "Inicia o servidor Vite"
+run = "npm run dev"
+
+[tasks.start]
+description = "Inicia o Vite com recarregamento automático"
+run = "npm run dev"
+
+[tasks.build]
+description = "Gera o build de produção"
+run = "npm run build"
+
+[tasks.test]
+description = "Executa os testes Vitest"
+run = "npm run test"
+
+[tasks.lint]
+description = "Verifica o código com Biome"
+run = "npm run lint"
+
+[tasks.format]
+description = "Formata os arquivos da aplicação com Biome"
+run = "npx biome format --write src e2e playwright.config.ts"
+
+[tasks.check]
+description = "Executa lint, testes e build de produção"
+run = "npm run lint && npm run test && npm run build"
+
+[tasks.e2e]
+description = "Executa o Playwright contra o ambiente configurado"
+run = "npm run test:e2e"
+
+[tasks."e2e:complete"]
+description = "Executa o Playwright para ReviewHub Complete"
+run = "E2E_PRODUCT=complete npm run test:e2e"
+
+[tasks."e2e:cinehub"]
+description = "Executa o Playwright para CineHub"
+run = "E2E_PRODUCT=cinehub npm run test:e2e"
+
+[tasks."e2e:matchhub"]
+description = "Executa o Playwright para MatchHub"
+run = "E2E_PRODUCT=matchhub npm run test:e2e"
