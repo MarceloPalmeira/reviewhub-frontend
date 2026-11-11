@@ -1744,3 +1744,55 @@ button:not(.button-quiet):not(.logout-button) {
     padding: 16px 18px;
   }
 }
+
+.services-status {
+  margin-top: 26px;
+  padding: 16px 20px;
+  border: 1px solid #2a2f3b;
+  border-radius: 12px;
+  background: #151821;
+}
+.services-status ul {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}
+.services-status li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .78rem;
+  color: #8b92a3;
+}
+.services-status li strong {
+  color: #e0e3ec;
+}
+.service-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6b7280;
+}
+.services-status li[data-state="up"] .service-dot {
+  background: #22c55e;
+  box-shadow: 0 0 0 3px #22c55e33;
+}
+.services-status li[data-state="down"] .service-dot {
+  background: #ef4444;
+}
+.recommendation {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.recommendation-reason {
+  font-size: .7rem;
+  color: var(--accent-text, #9fb4ff);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

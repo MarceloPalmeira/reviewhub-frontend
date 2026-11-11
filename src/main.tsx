@@ -17,7 +17,9 @@ import { z } from 'zod';
 import { ExternalSearch } from './ExternalSearch';
 import { ImdbRating } from './ImdbRating';
 import { AddToList, ListDetails, ListsPage } from './Lists';
+import { Recommendations } from './Recommendations';
 import { ReviewCard } from './ReviewCard';
+import { ServicesStatus } from './ServicesStatus';
 import { Feed, ProfileSocial } from './Social';
 import {
   type Content,
@@ -302,6 +304,8 @@ function Home({ product, user }: { product: Product; user: User | null }) {
           })}
         </div>
       </section>
+      <ServicesStatus product={product} />
+      <Recommendations product={product} user={user} />
       <section className="content-section">
         <div className="section-heading">
           <div>
