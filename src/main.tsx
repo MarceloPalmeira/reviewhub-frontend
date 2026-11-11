@@ -15,6 +15,7 @@ import {
 } from 'react-router-dom';
 import { z } from 'zod';
 import { ExternalSearch } from './ExternalSearch';
+import { ImdbRating } from './ImdbRating';
 import { AddToList, ListDetails, ListsPage } from './Lists';
 import { ReviewCard } from './ReviewCard';
 import { Feed, ProfileSocial } from './Social';
@@ -771,6 +772,10 @@ function Details({ user, product }: { user: User | null; product: Product }) {
             <RatingDisplay rating={stats.average} count={stats.count} />
             <span>·</span>
             <span>Notas da comunidade</span>
+            {product.features.includes('imdb_ratings') &&
+              (item.domain === 'movies' || item.domain === 'series') && (
+                <ImdbRating contentId={item.id} />
+              )}
           </div>
           <a className="button" href="#review-form">
             <Plus size={16} />

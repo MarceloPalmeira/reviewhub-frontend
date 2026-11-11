@@ -845,6 +845,7 @@ small {
 .detail-rating {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
   color: #8b92a3;
   font-size: .76rem;
@@ -852,6 +853,32 @@ small {
 }
 .detail-rating .rating-display {
   font-size: 1rem;
+}
+.imdb-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 6px;
+  color: #e0e3ec;
+  text-decoration: none;
+  font-size: .9rem;
+}
+.imdb-rating:hover strong,
+.imdb-rating:focus-visible strong {
+  text-decoration: underline;
+}
+.imdb-logo {
+  background: #f5c518;
+  color: #000;
+  font-weight: 800;
+  font-size: .68rem;
+  padding: 2px 5px;
+  border-radius: 3px;
+  letter-spacing: .02em;
+}
+.imdb-scale {
+  color: #81899a;
+  font-size: .72rem;
 }
 .detail-layout {
   display: grid;
